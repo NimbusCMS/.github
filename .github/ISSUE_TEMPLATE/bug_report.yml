@@ -1,0 +1,45 @@
+name: Bug report
+description: Something behaves differently than it should
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: Include the actual error or output, not a paraphrase.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected instead
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Create a collection with ...
+        2. Add an entry with ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit
+      description: NimbusCMS is pre-release — the commit SHA is the most useful thing here.
+    validations:
+      required: true
+  - type: input
+    id: php
+    attributes:
+      label: PHP version
+    validations:
+      required: true
+  - type: textarea
+    id: plugins
+    attributes:
+      label: Installed plugins
+      description: Plugin ids and versions, if any. A field-type problem is often a plugin problem.

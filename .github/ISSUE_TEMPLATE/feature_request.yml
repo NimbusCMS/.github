@@ -1,0 +1,36 @@
+name: Feature request
+description: Suggest something Nimbus should do
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Nimbus is small on purpose. The most useful thing you can describe is
+        the **problem**, not the solution — there may be a smaller way to solve it.
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What are you trying to do that is hard or impossible today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you have in mind
+    validations:
+      required: true
+  - type: dropdown
+    id: shape
+    attributes:
+      label: Does this belong in core, or in a plugin?
+      options:
+        - Core — everyone needs it
+        - A plugin — some people need it
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you considered
