@@ -7,6 +7,10 @@
 **A modern, lightweight PHP CMS — collections, a themeable admin, and a plugin
 system you can actually read.**
 
+**[🧹 Try the live demo →](https://demo.nimbuscms.dev/admin)**
+sign in with `demo@nimbuscms.dev` / `explore-nimbus-demo` — full admin, resets hourly
+· **[nimbuscms.dev](https://nimbuscms.dev)** (site + docs)
+
 </div>
 
 ---
