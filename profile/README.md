@@ -15,9 +15,8 @@ sign in with `demo@nimbuscms.dev` / `explore-nimbus-demo` — full admin, resets
 
 ---
 
-> ⚠️ **Pre-release.** No tagged version, no upgrade path between versions, no
-> password reset. Run it locally, fork it, read it — please don't put a
-> client's site on it yet.
+> ⚠️ **Pre-release.** No tagged version and no upgrade path between versions yet.
+> Run it locally, fork it, read it — please don't put a client's site on it yet.
 
 ## What it is
 
@@ -34,6 +33,15 @@ fork.
 |---|---|
 | **[nimbus](https://github.com/NimbusCMS/nimbus)** | The CMS core |
 | **[plugin-markdown](https://github.com/NimbusCMS/plugin-markdown)** | Markdown field type — the official reference plugin |
+| **[plugin-seo](https://github.com/NimbusCMS/plugin-seo)** | SEO structured data (JSON-LD) for public pages |
+| **[plugin-analytics](https://github.com/NimbusCMS/plugin-analytics)** | Privacy-first, first-party analytics |
+| **[plugin-api-advanced](https://github.com/NimbusCMS/plugin-api-advanced)** | Advanced API features (a security audit log) |
+| **[plugin-inventory](https://github.com/NimbusCMS/plugin-inventory)** | Ledger-based stock, agent-drivable over MCP |
+| **[plugin-commerce](https://github.com/NimbusCMS/plugin-commerce)** | Orders + checkout, reserving stock through Inventory |
+| **[theme-docs](https://github.com/NimbusCMS/theme-docs)** | Zero-JS docs + marketing theme |
+| **[theme-cafe](https://github.com/NimbusCMS/theme-cafe)** | Storefront — a warm small-business theme |
+| **[nimbuscms-www](https://github.com/NimbusCMS/nimbuscms-www)** | The marketing + docs site, running on Nimbus itself |
+| **[demo](https://github.com/NimbusCMS/demo)** | The Fern & Kettle demo site (demo.nimbuscms.dev) |
 | **[.github](https://github.com/NimbusCMS/.github)** | Community health files and brand assets |
 
 ## Plugins
@@ -53,10 +61,14 @@ stay in the database untouched, the admin shows them read-only and names the
 missing provider, and saves are refused until it's back. A CMS that loses
 content when a plugin is removed isn't one anyone should trust with content.
 
-The plugin surface is deliberately tiny — today a plugin can register field
-types, and that's it. Each further capability gets added alongside a plugin
-that actually needs it, never as a batch of extension points designed in
-advance. See
+The plugin surface grows **one capability at a time**, each added alongside a
+plugin that actually needed it — never a batch of extension points designed in
+advance. Today a plugin can register field types, contribute to `<head>`, listen
+to and **emit** events, own its migrations + tables, declare a grantable
+wildcard-immune capability, expose **MCP tools** that gate on it, serve public
+routes, publish **typed service ports** to other plugins, and add
+**capability-gated admin pages**. Access to core tables and controllers is
+deliberately still not exposed. See
 [ADR 0001](https://github.com/NimbusCMS/nimbus/blob/main/docs/adr/0001-plugin-contract.md).
 
 ## Contributing
